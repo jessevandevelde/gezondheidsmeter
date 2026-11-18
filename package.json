@@ -1,0 +1,32 @@
+{
+  "name": "gezondheidsmeter",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "build:server": "npm run build -w server",
+    "build:client": "npm run build -w client",
+    "build": "npm run build:server && npm run build:client",
+    "start:server:prod": "npm run start:prod -w server",
+    "start:client": "npm start -w client",
+    "start:server": "npm start -w server",
+    "stylelint": "stylelint \"client/src/**/*.css\" -c ./stylelint.config.mjs",
+    "eslint:all": "npm run eslint -w client && npm run eslint -w server",
+    "lint:all": "npm run eslint:all && npm run stylelint"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.12.0 || ^24.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@stylistic/eslint-plugin": "^5.3.1",
+    "eslint": "^9.35.0",
+    "typescript-eslint": "^8.43.0",
+    "stylelint": "^16.24.0",
+    "@stylistic/stylelint-config": "^3.0.1",
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "stylelint-config-recommended": "^17.0.0"
+  },
+  "private": true
+}
